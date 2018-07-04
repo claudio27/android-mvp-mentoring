@@ -33,7 +33,7 @@
           android:layout_marginLeft="25dp"
           android:hint="Contraseña"
           android:inputType="textPassword"/>
-      
+
       <TextView
           android:id="@+id/tvLogin"
           android:layout_width="match_parent"
@@ -50,6 +50,24 @@
           android:gravity="center"
           />
 
+         <com.google.android.gms.common.SignInButton
+          android:id="@+id/sign_in_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"/>
+
+      <TextView
+          android:id="@+id/status"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/signed_out"
+          android:textColor="@android:color/white"
+          android:textSize="14sp" />
+
+
+
   </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
