@@ -1,6 +1,7 @@
 package com.example.claudio.myapplication.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,7 +17,7 @@ public class LoginActivity extends Activity implements View.OnClickListener, ILo
 
     EditText etUserName, etPassword;
     TextView tvLogin;
-
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     ILoginPresenter presenter;
 
     @Override
@@ -54,5 +55,13 @@ public class LoginActivity extends Activity implements View.OnClickListener, ILo
     @Override
     public void loginError() {
         Toast.makeText(getApplicationContext(), "Login Fallo", Toast.LENGTH_LONG).show();
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        EditText editText = etUserName;
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
